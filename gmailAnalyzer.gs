@@ -24,6 +24,6 @@ function getMessagesWithLabel() {
       cell.setValue(messages[j].getSubject());
       cell = sh.getRange(firstEmptyRow,3)
       cell.setValue(messages[j].getFrom());
-    }
-    
+    }    
   }
+}
