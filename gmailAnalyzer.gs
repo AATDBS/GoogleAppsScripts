@@ -22,12 +22,18 @@ function getMessagesWithLabel() {
       firstEmptyRow = firstEmptyRow + 1;
       cell = sh.getRange(firstEmptyRow,1)
       cell.setValue(messages[j].getDate());
+     
       cell = sh.getRange(firstEmptyRow,2)
       cell.setValue(messages[j].getSubject());
+            
       cell = sh.getRange(firstEmptyRow,3)
-      cell.setValue(messages[j].getFrom());
-      //cell = sh.getRange(firstEmptyRow,4)
-      //cell.setValue(messages[j].isInTrash());
+      var remitente = messages[j].getFrom();      
+      cell.setValue(remitente);
+            
+      cell = sh.getRange(firstEmptyRow,4)
+      //extrae la parte de dominio del email
+      dominio = remitente.substring(remitente.indexOf("@")+1, remitente.length-1);
+      cell.setValue(dominio);
       
     } //end for j
     
