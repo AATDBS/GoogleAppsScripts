@@ -2,7 +2,7 @@ function getMessagesWithLabel() {
       
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var sh = ss.getActiveSheet();
-  var threads = GmailApp.getUserLabelByName('VPN').getThreads();  
+  var threads = GmailApp.getUserLabelByName('VPN').getThreads(0,100);  //threads from 0 to 100
   var firstEmptyRow = sh.getLastRow();
   var cell = sh.getRange(firstEmptyRow,1)
   var procesados = 0;
